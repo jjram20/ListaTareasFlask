@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de tareas</title>
+</head>
+
+<body>
+{% block content %}
+<ol>
+    {% for tarea in template_tareas %}
+    <li>{{ tarea[1] }} | <a href="/eliminarTarea/{{ tarea[0] }}">Eliminar</a> | <a href="/editarTarea/{{ tarea[0] }}">Editar</a></li>
+    {% endfor %}
+</ol>
+{% endblock %}
+<a href="/formulario">Crear tarea</a>
+</body>
+
+</html>
